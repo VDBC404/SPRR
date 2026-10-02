@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de mascotas</title>
+</head>
+<body>
+        <h2>Formulario de Registro de Mascotas</h2>
+    <form action="" method="post">
+        <label for="nombre">Nombre de la mascota:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="tipo">Tipo de mascota:</label><br>
+        <select id="tipo" name="tipo" required>
+            <option value="">--Selecciona una opción--</option>
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+            <option value="ave">Ave</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="raza">Raza:</label><br>
+        <input type="text" id="raza" name="raza"><br><br>
+
+        <label for="edad">Edad (en años):</label><br>
+        <input type="number" id="edad" name="edad" min="0"><br><br>
+
+        <label for="dueno">Nombre del dueño:</label><br>
+        <input type="text" id="dueno" name="dueno" required><br><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* SPRR - hoja de estilos unificada (reemplaza sprrinv, sprrindex, sprrconfig, sprrsignup, INICIO_DE_SESION) */
+:root{
+  --pino:#0f4c45; --pino-osc:#0a332e; --ají:#d9482b; --maiz:#e8b12d;
+  --papel:#f2f4f0; --tarjeta:#fff; --tinta:#17211f; --suave:#5d6b67; --linea:#dde3de;
+  --radio:10px;
+  --f-titulo:'Bricolage Grotesque',system-ui,sans-serif;
+  --f-texto:'Source Sans 3',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-texto);font-size:1rem;line-height:1.55;color:var(--tinta);background:var(--papel)}
+h1,h2,h3,h4,h5{font-family:var(--f-titulo);line-height:1.15;margin:0 0 .5rem}
+a{color:var(--pino)}
+.wrap{width:min(1100px,92%);margin-inline:auto}
+:focus-visible{outline:3px solid var(--maiz);outline-offset:2px}
+
+/* Barra superior */
+.topbar{background:var(--pino-osc);color:#fff;position:sticky;top:0;z-index:5}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;flex-wrap:wrap}
+.brand-box{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff}
+.brand-box img{height:30px;width:auto}
+.brand{font-family:var(--f-titulo);font-size:1.15rem;font-weight:700;margin:0}
+.main-nav{display:flex;gap:.25rem;flex-wrap:wrap}
+.main-nav a{color:#cfdcd8;text-decoration:none;padding:.4rem .8rem;border-radius:6px}
+.main-nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.main-nav a.active{background:var(--maiz);color:var(--pino-osc);font-weight:600}
+
+/* Encabezado de sección */
+.hero{background:var(--pino);color:#fff;padding:2.2rem 0 4.5rem}
+.hero h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin:0}
+.hero p{color:#cfdcd8;margin:.3rem 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:-3rem}
+.card{display:block;background:var(--tarjeta);border:1px solid var(--linea);border-radius:var(--radio);padding:1.1rem 1.2rem;text-decoration:none;color:inherit;transition:border-color .15s}
+.card:hover{border-color:var(--pino)}
+.card.active{border:2px solid var(--pino);background:#e8f1ee}
+.card-emoji{font-size:1.7rem}
+.card h3{font-size:1.15rem;margin:.2rem 0 0;color:var(--pino)}
+.card p{margin:0;color:var(--suave);font-size:.95rem}
+@media(max-width:800px){.cards{grid-template-columns:1fr}}
+
+/* Contenedor principal */
+.panel,.inventario-box{background:var(--tarjeta);border:1px solid var(--linea);border-radius:var(--radio);padding:1.8rem;margin:1.5rem 0 3rem}
+.panel h4,.inventario-box h4{font-size:1.4rem;margin-bottom:1rem}
+.subtitle{color:var(--suave);margin:-.4rem 0 1.2rem}
+.mt{margin-top:2rem}
+
+/* Formularios */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 1.2rem}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field.full{grid-column:1/-1}
+label{font-size:.92rem;font-weight:600}
+input[type=text],input[type=number],input[type=tel],input[type=password],input[type=email],input[type=date],select,textarea{
+  font:inherit;color:var(--tinta);background:#fff;border:1px solid #b9c4bf;border-radius:8px;padding:.6rem .75rem;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--pino);box-shadow:0 0 0 3px rgba(15,76,69,.2);outline:none}
+input:disabled{background:#eef1ee;color:var(--suave)}
+input[type=file]{font:inherit}
+.actions{grid-column:1/-1;display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem}
+@media(max-width:700px){.form-grid{grid-template-columns:1fr}}
+
+/* Botones (sobre Bootstrap) */
+.btn{border-radius:8px;font-weight:600}
+.btn-success{background:var(--pino);border-color:var(--pino)}
+.btn-success:hover{background:var(--pino-osc);border-color:var(--pino-osc)}
+.btn-danger{background:var(--ají);border-color:var(--ají)}
+.btn-danger:hover{background:#b83a21;border-color:#b83a21}
+
+/* Tablas */
+.table-wrap{overflow-x:auto;border:1px solid var(--linea);border-radius:8px}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:.65rem .8rem;text-align:left;border-bottom:1px solid var(--linea);vertical-align:middle}
+thead th{background:#e8f1ee;font-family:var(--f-titulo);font-size:.92rem}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#f6f9f7}
+td img{height:56px;width:56px;object-fit:cover;border-radius:8px}
+.vacio{text-align:center;color:var(--suave);padding:1.5rem}
+
+/* Páginas de acceso (login / registro) */
+body.auth{background:var(--pino-osc)}
+.auth-box{max-width:520px;margin:3rem auto;background:#fff;border-radius:var(--radio);padding:2.2rem}
+.auth-box h2{font-size:1.8rem}
+.auth-box label{display:block;margin:.9rem 0 .3rem}
+.auth-box button[type=submit]{width:100%;margin-top:1.4rem;padding:.75rem;border:0;border-radius:8px;background:var(--pino);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.auth-box button[type=submit]:hover{background:var(--pino-osc)}
+.login-link{text-align:center;margin:1.2rem 0 0;color:var(--suave)}
+
+/* Inicio (index.php) */
+.inicio{padding:3rem 0 4rem;text-align:center}
+.inicio h1{font-size:clamp(2rem,5vw,3rem);color:var(--pino)}
+.inicio .cards{margin-top:2rem}
+.inicio .card{padding:2rem 1rem}
+.inicio .card h3{font-size:1.4rem}
+
+/* Pie de página */
+.pie{background:var(--pino-osc);color:#cfdcd8;padding:2rem 0;margin-top:2rem;font-size:.95rem}
+.pie .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pie h5{color:#fff}
+.pie a{color:#fff}
+@media(max-width:800px){.pie .wrap{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

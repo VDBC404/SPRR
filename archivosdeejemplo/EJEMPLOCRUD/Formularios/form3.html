@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuario</title>
+</head>
+<body>
+       <h2>Formulario de Registro</h2>
+    <form action="" method="post">
+        <label for="nombre">Nombre completo:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="" placeholder="Ej. 5551234567"><br><br>
+
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br><br>
+
+        <label for="genero">Género:</label><br>
+        <select id="genero" name="genero">
+            <option value="">--Selecciona una opción--</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="direccion">Dirección:</label><br>
+        <textarea id="direccion" name="direccion" rows="3" cols="30"></textarea><br><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+
+</body>
+</html>
